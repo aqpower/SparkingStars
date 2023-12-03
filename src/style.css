@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+* {
+    color: #edf0f3;
+    text-decoration: none;
+    margin: 0;
+}
+
+body {
+    /* background-color: #ce3635; */
+    /* background-color: #11191f; */
+    /* background-color: #131853; */
+    /* background-color: #112378; */
+    background-color: #10203f;
+    /* background-image: linear-gradient(to top, #13274b 0%, #10203f 50%, #1c396b 100%); */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    /* background-color: #1b2832; */
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+    background-color: rgb(64, 64, 64);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(96, 96, 96);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(112, 112, 112);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgb(128, 128, 128);
+}
+
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+    background-color: rgb(64, 64, 64);
+
+    display: block;
+    background-size: 10px;
+    background-repeat: no-repeat;
+}
+
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    height: 12px;
+    width: 16px;
+    background-position: center 4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    height: 12px;
+    width: 16px;
+    background-position: center 2px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(96, 96, 96)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(112, 112, 112)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(128, 128, 128)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+.logo {
+    position: absolute;
+    left: 50vw;
+    right: 0;
+    top: 60vh;
+    margin: 0;
+    /* letter-spacing: 1vw; */
+    /* text-shadow: 0 0 1px rgba(202, 228, 225, 0.92), */
+    /* 0 0 5px rgba(250, 239, 92, 0.92); */
+    opacity: 1;
+    font-family: 'Noto Serif SC', 'Noto Color Emoji', serif;
+    z-index: 999;
+    animation: up ease-in-out 0.75s;
+}
+
+.logo-text {
+    font-size: 32px;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        top: 58vh;
+        left: 30vw;
+    }
+
+    .logo-text {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .logo {
+        top: 61.8vh;
+    }
+
+    .logo-text {
+        font-size: 35px;
+    }
+}
+
+.welcome_text {
+    font-size: 24px;
+    margin-top: 16px;
+}
+
+.section-container {
+    height: 100vh;
+    overflow-y: scroll;
+    /* 在父容器上面使用 scroll-snap-type 属性 */
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    /* 在需要滚动的容器上使用 scroll-snap-align 属性 */
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.text {
+    position: absolute;
+    font-size: 20px;
+    /* background-color: white; */
+    /* color: #1b2832; */
+    color: #edf0f3;
+    text-shadow: 0 0 1px rgba(202, 228, 225, 0.92),
+        0 0 9px rgba(250, 239, 92, 0.92);
+    /* color: #FFEB3B; */
+    /* background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); */
+    width: auto;
+    font-family: 'Noto Serif SC', 'Noto Color Emoji', serif;
+    /* font-family: 'Noto Sans SC', sans-serif; */
+    font-weight: 700;
+    border-radius: 20px;
+    left: 0;
+    margin: 7px 10px;
+    padding: 6px 10px;
+    text-align: center;
+    opacity: 0;
+    white-space: nowrap;
+    /* animation: move 12s infinite ease-in-out; */
+}
+
+@keyframes move {
+    from {
+        opacity: 1;
+        transform: translateX(100vw) translateY(-80vh) rotate(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(calc(-100% - 2px)) rotate(-40deg);
+    }
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.menu-box {
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    position: relative;
+}
+
+.menu {
+    padding: 10px 8.5px;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    position: relative;
+    transition: ease 0.5s;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    inset: 0 0 0 0;
+    transition: transform 0.3s ease;
+    background-color: rgb(173, 173, 84);
+    border-radius: 5px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu-text {
+    font-size: 20px;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2vh;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.footer p {
+    margin: 10px;
+}
+
+hr {
+    /* width: 666px; */
+    margin: 24px 20vw;
+    opacity: 0.3;
+}
+
+#nis::before {
+    content: url('https://jgox-image-1316409677.cos.ap-guangzhou.myqcloud.com/blog/beian.png');
+    vertical-align: middle;
+    display: inline-block;
+    line-height: var(--line-height);
+    box-sizing: border-box;
+}
+
+.img-box {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.img-box div {
+    height: 100%;
+    margin: 24px 24px 0 24px;
+}
+
+.img-box div p {
+    margin-top: 9px;
+    font-size: 18px;
+    font-family: 'Noto Serif SC', 'Noto Color Emoji', serif;
+}
+
+.img-box div img {
+    box-shadow: rgba(235, 235, 139, 0.25) 0px 13px 27px -5px, rgba(228, 215, 37, 0.3) 0px 8px 16px -8px;
+}
+
+@media (max-width: 1150px) {
+    .img-box {
+        flex-direction: column;
+    }
+
+    .img-box div img {
+        height: 90%;
+    }
+}
+
+@media (min-width: 1151px) {
+    .img-box div img {
+        /* width: 500px; */
+        /* height: 100%; */
+        height: calc(100vh * 0.75);
+    }
+}
+
+.img-2 {
+    transform: rotateY(180deg);
+}
